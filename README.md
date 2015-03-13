@@ -7,7 +7,7 @@
 # Install
 
 ```shell
-composer require overtrue/laravel-lang
+composer require "overtrue/laravel-lang:dev-master"
 ```
 
 or add the following line to your project's `composer.json`:
