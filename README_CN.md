@@ -63,7 +63,8 @@ return [
 
 ```php
 echo trans('user_not_exists'); // 用户不存在
-echo trans('email_has_registed', ['email' => 'anzhengchao@gmail.com']); // 邮箱 anzhengchao@gmail.com 已经注册过！
+echo trans('email_has_registed', ['email' => 'anzhengchao@gmail.com']);
+// 邮箱 anzhengchao@gmail.com 已经注册过！
 ```
 
 ### 替换掉默认的语言项
