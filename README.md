@@ -2,7 +2,7 @@
 
 37 languages for Laravel 5 based on [Laravel4-lang](https://github.com/caouecs/Laravel4-lang).
 
-[中文](README_CN.md)
+[中文说明](README_CN.md)
 
 # Install
 
