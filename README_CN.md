@@ -1,11 +1,11 @@
 # Loggingaravel-lang
 
-Laravel 5 37 语言包， 基于 [Laravel4-lang](https://github.com/caouecs/Laravel4-lang).
+Laravel 5 语言包，包含37种语言, 基于 [Laravel4-lang](https://github.com/caouecs/Laravel4-lang).
 
 # 安装
 
 ```shell
-composer require overtrue/laravel-lang
+composer require "overtrue/laravel-lang:dev-master"
 ```
 
 或者添加下面一行到你的项目 `composer.json` 中 `require` 部分:
