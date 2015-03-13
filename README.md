@@ -11,9 +11,9 @@ composer require overtrue/laravel-lang
 or add the following line to your project's composer.json:
 
 ```json
-    "require": {
-        "overtrue/laravel-lang": "dev-master"
-    }
+"require": {
+    "overtrue/laravel-lang": "dev-master"
+}
 ```
 then
 
