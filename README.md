@@ -1,4 +1,4 @@
-# laravel-lang
+# Laravel-lang
 
 37 languages for Laravel 5 based on [Laravel4-lang](https://github.com/caouecs/Laravel4-lang).
 
@@ -8,7 +8,7 @@
 composer require overtrue/laravel-lang
 ```
 
-or add the following line to your project's composer.json:
+or add the following line to your project's `composer.json`:
 
 ```json
 "require": {
@@ -20,7 +20,7 @@ then
 ```shell
 composer update
 ```
-After completion of the above, Replace
+After completion of the above, Replace the `config/app.php` content
 ```php
 'Illuminate\Translation\TranslationServiceProvider'
 ```
@@ -31,9 +31,58 @@ into
 'Overtrue\LaravelLang\TranslationServiceProvider',
 ```
 
+# Configuration
+
+Modify the project language:
+
+`config/app.php`:
+
+```php
+'locale' => 'zh-CN',
+```
+
 # Usage
 
 There is no difference with the usual usage.
+
+If you need to add additional language content, Please create a file in the `resources/lang/{LANGUAGE}`  directory.
+
+### Add custom language items
+
+Here, for example in Chinese:
+
+`resources/lang/zh-CN/demo.php`:
+
+```php
+<?php
+
+return [
+    'user_not_exists'    => '用户不存在',
+    'email_has_registed' => '邮箱 :email 已经注册过！',
+];
+```
+Used in the template:
+
+```php
+echo trans('user_not_exists'); // 用户不存在
+echo trans('email_has_registed', ['email' => 'anzhengchao@gmail.com']); // 邮箱 anzhengchao@gmail.com 已经注册过！
+```
+
+### replace the default language items partially
+
+We assume that want to replace the `password.reset` message:
+
+`resources/lang/zh-CN/passwords.php`:
+
+```php
+<?php
+
+return [
+    'reset' => '您的密码已经重置成功了，你可以使用新的密码登录了!',
+];
+```
+
+You need only add the part what you want.
 
 # License
 
