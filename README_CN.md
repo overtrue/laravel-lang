@@ -1,4 +1,4 @@
-# Loggingaravel-lang
+# Laravel-lang
 
 Laravel 5 语言包，包含37种语言, 基于 [Laravel4-lang](https://github.com/caouecs/Laravel4-lang).
 
