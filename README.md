@@ -23,10 +23,10 @@ then
 composer update
 ```
 After completion of the above, Replace the `config/app.php` content
+
 ```php
 'Illuminate\Translation\TranslationServiceProvider'
 ```
-
 into
 
 ```php
