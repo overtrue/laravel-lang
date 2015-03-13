@@ -31,7 +31,7 @@ into
 'Overtrue\LaravelLang\TranslationServiceProvider',
 ```
 
-# Useage
+# Usage
 
 There is no difference with the usual usage.
 
