@@ -1,12 +1,17 @@
 {
     "name": "overtrue/laravel-lang",
     "description": "List of 37 languages for Laravel 5",
+     "keywords": [
+        "laravel",
+        "languages",
+        "overtrue"
+    ],
     "require": {
         "caouecs/laravel4-lang": "0.12.*"
     },
     "autoload": {
         "psr-4": {
-            "Overtrue\\LaravelLang\\": "src/" 
+            "Overtrue\\LaravelLang\\": "src/"
         }
     },
     "license": "MIT",
