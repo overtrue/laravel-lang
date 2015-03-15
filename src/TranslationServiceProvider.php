@@ -6,8 +6,6 @@ use Illuminate\Translation\TranslationServiceProvider as LaravelTranslationServi
 
 class TranslationServiceProvider extends LaravelTranslationServiceProvider
 {
-    const MULTI_LANG_PATH = __DIR__ . '/../../../caouecs/laravel4-lang';
-
     /**
      * Register the translation line loader.
      *
@@ -17,7 +15,9 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
     {
         $this->app->singleton('translation.loader', function($app)
         {
-            return new FileLoader($app['files'], $app['path.lang'], self::MULTI_LANG_PATH);
+            $multiLangPath = __DIR__ . '/../../../caouecs/laravel4-lang';
+            
+            return new FileLoader($app['files'], $app['path.lang'], $multiLangPath);
         });
     }
 }
