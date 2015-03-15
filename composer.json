@@ -1,7 +1,7 @@
 {
     "name": "overtrue/laravel-lang",
     "description": "List of 37 languages for Laravel 5",
-     "keywords": [
+    "keywords": [
         "laravel",
         "languages",
         "overtrue"
