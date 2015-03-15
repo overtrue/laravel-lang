@@ -2,7 +2,7 @@
 
 Laravel 5 语言包，包含37种语言, 基于 [Laravel4-lang](https://github.com/caouecs/Laravel4-lang).
 
-# 安装
+## 安装
 
 ```shell
 composer require "overtrue/laravel-lang:dev-master"
@@ -35,7 +35,7 @@ composer update
 
 即可。
 
-# 配置
+## 配置
 
 修改项目语言 `config/app.php`：
 
@@ -43,7 +43,7 @@ composer update
 'locale' => 'zh-CN',
 ```
 
-# 使用
+## 使用
 
 和正常使用一样，你如果需要额外添加语言项，请在 `resources/lang/zh-CN/` 下建立你自己的文件即可，也可以建立同样的文件来替换掉默认的语言部分。
 
@@ -81,6 +81,6 @@ return [
 
 只放置你需要替换的部分即可。
 
-# License
+## License
 
 MIT

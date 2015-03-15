@@ -6,7 +6,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/overtrue/laravel-lang/v/stable.svg)](https://packagist.org/packages/overtrue/laravel-lang) [![Total Downloads](https://poser.pugx.org/overtrue/laravel-lang/downloads.svg)](https://packagist.org/packages/overtrue/laravel-lang) [![Latest Unstable Version](https://poser.pugx.org/overtrue/laravel-lang/v/unstable.svg)](https://packagist.org/packages/overtrue/laravel-lang) [![License](https://poser.pugx.org/overtrue/laravel-lang/license.svg)](https://packagist.org/packages/overtrue/laravel-lang)
 
-# Install
+## Install
 
 ```shell
 composer require "overtrue/laravel-lang:dev-master"
@@ -35,7 +35,7 @@ into
 'Overtrue\LaravelLang\TranslationServiceProvider',
 ```
 
-# Configuration
+## Configuration
 
 Modify the project language:
 
@@ -45,7 +45,7 @@ Modify the project language:
 'locale' => 'zh-CN',
 ```
 
-# Usage
+## Usage
 
 There is no difference with the usual usage.
 
@@ -73,7 +73,7 @@ echo trans('email_has_registed', ['email' => 'anzhengchao@gmail.com']);
 // 邮箱 anzhengchao@gmail.com 已经注册过！
 ```
 
-### replace the default language items partially
+### Replace the default language items partially
 
 We assume that want to replace the `password.reset` message:
 
@@ -89,6 +89,6 @@ return [
 
 You need only add the part what you want.
 
-# License
+## License
 
 MIT
