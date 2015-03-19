@@ -1,6 +1,6 @@
 # Laravel-lang
 
-37 languages for Laravel 5 based on [Laravel4-lang](https://github.com/caouecs/Laravel4-lang).
+44 languages for Laravel 5 based on [Laravel4-lang](https://github.com/caouecs/Laravel4-lang).
 
 [中文说明](README_CN.md)
 
@@ -68,8 +68,8 @@ return [
 Used in the template:
 
 ```php
-echo trans('demo.user_not_exists'); // 用户不存在
-echo trans('demo.email_has_registed', ['email' => 'anzhengchao@gmail.com']);
+echo pinyin_trans('demo.user_not_exists'); // 用户不存在
+echo pinyin_trans('demo.email_has_registed', ['email' => 'anzhengchao@gmail.com']);
 // 邮箱 anzhengchao@gmail.com 已经注册过！
 ```
 
