@@ -68,8 +68,8 @@ return [
 Used in the template:
 
 ```php
-echo pinyin_trans('demo.user_not_exists'); // 用户不存在
-echo pinyin_trans('demo.email_has_registed', ['email' => 'anzhengchao@gmail.com']);
+echo trans('demo.user_not_exists'); // 用户不存在
+echo trans('demo.email_has_registed', ['email' => 'anzhengchao@gmail.com']);
 // 邮箱 anzhengchao@gmail.com 已经注册过！
 ```
 
