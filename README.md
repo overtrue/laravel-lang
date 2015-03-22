@@ -37,9 +37,7 @@ into
 
 ## Configuration
 
-Modify the project language:
-
-`config/app.php`:
+you can change the locale at `config/app.php`:
 
 ```php
 'locale' => 'zh-CN',
