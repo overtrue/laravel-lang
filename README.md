@@ -9,14 +9,14 @@
 ## Install
 
 ```shell
-composer require "overtrue/laravel-lang:dev-master"
+composer require "overtrue/laravel-lang:1.0.*"
 ```
 
 or add the following line to your project's `composer.json`:
 
 ```json
 "require": {
-    "overtrue/laravel-lang": "dev-master"
+    "overtrue/laravel-lang": "1.0.*"
 }
 ```
 then
