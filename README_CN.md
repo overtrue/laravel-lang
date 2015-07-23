@@ -1,6 +1,6 @@
 # Laravel-lang
 
-Laravel 5 语言包，包含 44 种语言, 基于 [Laravel4-lang](https://github.com/caouecs/Laravel4-lang).
+Laravel 5 语言包，包含 46 种语言, 基于 [caouecs/Laravel-lang](https://github.com/caouecs/Laravel-lang).
 
 ## 安装
 
@@ -24,13 +24,13 @@ composer update
 完成上面的操作后，将项目文件 `config/app.php` 中的下一行
 
 ```php
-'Illuminate\Translation\TranslationServiceProvider'
+Illuminate\Translation\TranslationServiceProvider::class,
 ```
 
 替换为：
 
 ```php
-'Overtrue\LaravelLang\TranslationServiceProvider',
+Overtrue\LaravelLang\TranslationServiceProvider::class,
 ```
 
 即可。

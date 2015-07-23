@@ -1,6 +1,6 @@
 # Laravel-lang
 
-44 languages for Laravel 5 based on [Laravel4-lang](https://github.com/caouecs/Laravel4-lang).
+46 languages for Laravel 5 based on [caouecs/Laravel-lang](https://github.com/caouecs/Laravel-lang).
 
 [中文说明](README_CN.md)
 
@@ -27,12 +27,12 @@ composer update
 After completion of the above, Replace the `config/app.php` content
 
 ```php
-'Illuminate\Translation\TranslationServiceProvider'
+Illuminate\Translation\TranslationServiceProvider::class,
 ```
 with:
 
 ```php
-'Overtrue\LaravelLang\TranslationServiceProvider',
+Overtrue\LaravelLang\TranslationServiceProvider::class,
 ```
 
 ## Configuration
