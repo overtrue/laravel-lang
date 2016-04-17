@@ -15,8 +15,8 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
     {
         $this->app->singleton('translation.loader', function($app)
         {
-            $multiLangPath = __DIR__ . '/../../../caouecs/laravel4-lang';
-            
+            $multiLangPath = app_path('../vendor') . '/caouecs/laravel4-lang/src';
+
             return new FileLoader($app['files'], $app['path.lang'], $multiLangPath);
         });
     }
