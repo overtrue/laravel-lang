@@ -9,21 +9,9 @@
 ## Install
 
 ```shell
-composer require "overtrue/laravel-lang:~2.0"
+$ composer require "overtrue/laravel-lang:~2.0"
 ```
 
-or add the following line to your project's `composer.json`:
-
-```json
-"require": {
-    "overtrue/laravel-lang": "~2.0"
-}
-```
-then
-
-```shell
-composer update
-```
 After completion of the above, Replace the `config/app.php` content
 
 ```php
@@ -85,7 +73,19 @@ return [
 ];
 ```
 
-You need only add the part what you want.
+You need only add the partials item what you want.
+
+### publish the language files to your project `resources/lang/` directory:
+
+```shell
+$ php artisan vendor:publish --provider="Overtrue\LaravelLang\TranslationServiceProvider" --tag=resouece
+```
+
+or force publish(will overwrite old files):
+
+```shell
+$ php artisan vendor:publish --provider="Overtrue\LaravelLang\TranslationServiceProvider" --tag=resource --force
+```
 
 ## License
 

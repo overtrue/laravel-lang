@@ -81,6 +81,19 @@ return [
 
 只放置你需要替换的部分即可。
 
+
+### 将翻译文件拷贝到你的项目 `resources/lang/` 目录下:
+
+```shell
+$ php artisan vendor:publish --provider="Overtrue\LaravelLang\TranslationServiceProvider" --tag=resouece
+```
+
+当然你也可以强制拷贝(将会覆盖原有同名文件哦):
+
+```shell
+$ php artisan vendor:publish --provider="Overtrue\LaravelLang\TranslationServiceProvider" --tag=resource --force
+```
+
 ## License
 
 MIT
