@@ -7,7 +7,7 @@
         "overtrue"
     ],
     "require": {
-        "caouecs/laravel4-lang": "v3.x-dev"
+        "caouecs/laravel4-lang": "~3.0"
     },
     "autoload": {
         "psr-4": {
