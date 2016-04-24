@@ -1,6 +1,6 @@
 # Laravel-lang
 
-46 languages for Laravel 5 based on [caouecs/Laravel-lang](https://github.com/caouecs/Laravel-lang).
+52 languages support for Laravel 5 application based on [caouecs/Laravel-lang](https://github.com/caouecs/Laravel-lang).
 
 [中文说明](README_CN.md)
 
@@ -9,14 +9,14 @@
 ## Install
 
 ```shell
-composer require "overtrue/laravel-lang:1.0.*"
+composer require "overtrue/laravel-lang:~2.0"
 ```
 
 or add the following line to your project's `composer.json`:
 
 ```json
 "require": {
-    "overtrue/laravel-lang": "1.0.*"
+    "overtrue/laravel-lang": "~2.0"
 }
 ```
 then

@@ -1,13 +1,13 @@
 {
     "name": "overtrue/laravel-lang",
-    "description": "List of 37 languages for Laravel 5",
+    "description": "List of 52 languages for Laravel 5",
     "keywords": [
         "laravel",
         "languages",
         "overtrue"
     ],
     "require": {
-        "caouecs/laravel4-lang": "~2.0"
+        "caouecs/laravel-lang": "~3.0"
     },
     "autoload": {
         "psr-4": {
