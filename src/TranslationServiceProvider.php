@@ -7,6 +7,16 @@ use Illuminate\Translation\TranslationServiceProvider as LaravelTranslationServi
 class TranslationServiceProvider extends LaravelTranslationServiceProvider
 {
     /**
+     * Publish the translation files into project directory.
+     */
+    public function boot()
+    {
+        $this->publishes([
+                app_path('../vendor') . '/caouecs/laravel4-lang/src/' => resource_path('lang/'),
+            ], 'resource');
+    }
+
+    /**
      * Register the translation line loader.
      *
      * @return void
