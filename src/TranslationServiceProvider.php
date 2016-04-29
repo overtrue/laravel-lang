@@ -8,11 +8,9 @@ use Illuminate\Translation\TranslationServiceProvider as LaravelTranslationServi
 class TranslationServiceProvider extends LaravelTranslationServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
-     *
      * @var bool
      */
-    protected $defer = true;
+    protected $inLumen = false;
 
     /**
      * Register the service provider.
@@ -21,6 +19,14 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
      */
     public function register()
     {
+        if ($this->app instanceof \Laravel\Lumen\Application) {
+            $this->inLumen = true;
+
+            $this->app->configure('app');
+
+            unset($this->app->availableBindings['translator']);
+        }
+
         parent::register();
 
         $this->registerCommands();
@@ -35,9 +41,16 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
     {
         $this->app->singleton('translation.loader', function($app)
         {
-            $multiLangPath = app()->basePath().'/vendor/caouecs/laravel-lang/src/';
+            $paths = [
+                app()->basePath('vendor/caouecs/laravel-lang/src/'),
+            ];
 
-            return new FileLoader($app['files'], $app['path.lang'], $multiLangPath);
+            if ($this->inLumen) {
+                $this->app['path.lang'] = app()->basePath('vendor/laravel/lumen-framework/resources/lang');
+                array_push($paths, app()->basePath('resources/lang/'));
+            }
+
+            return new FileLoader($app['files'], $app['path.lang'], $paths);
         });
     }
 

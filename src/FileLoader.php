@@ -8,22 +8,20 @@ use Illuminate\Filesystem\Filesystem;
 class FileLoader extends LaravelTranslationFileLoader
 {
     /**
-     * 37 languages dir.
-     *
      * @var string
      */
-    protected $multiLangPath;
+    protected $paths;
 
     /**
      * Create a new file loader instance.
      *
      * @param  \Illuminate\Filesystem\Filesystem  $files
-     * @param  string  $path
+     * @param  array  $path
      * @return void
      */
-    public function __construct(Filesystem $files, $path, $multiLangPath)
+    public function __construct(Filesystem $files, $path, $paths = [])
     {
-        $this->multiLangPath = $multiLangPath;
+        $this->paths = $paths;
 
         parent::__construct($files, $path);
     }
@@ -38,7 +36,11 @@ class FileLoader extends LaravelTranslationFileLoader
      */
     public function load($locale, $group, $namespace = null)
     {
-        $defaults = $this->loadPath($this->multiLangPath, $locale, $group);
+        $defaults = [];
+
+        foreach ($this->paths as $path) {
+            $defaults = array_replace_recursive($defaults, $this->loadPath($path, $locale, $group));
+        }
 
         return array_replace_recursive($defaults, parent::load($locale, $group, $namespace));
     }
