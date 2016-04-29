@@ -20,7 +20,7 @@
 # Install
 
 ```shell
-$ composer require "overtrue/laravel-lang:~2.1"
+$ composer require "overtrue/laravel-lang:~3.0"
 ```
 
 #### Laraval 5.*
