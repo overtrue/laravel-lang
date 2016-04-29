@@ -4,13 +4,27 @@
 
 [中文说明](README_CN.md)
 
-[![Latest Stable Version](https://poser.pugx.org/overtrue/laravel-lang/v/stable.svg)](https://packagist.org/packages/overtrue/laravel-lang) [![Total Downloads](https://poser.pugx.org/overtrue/laravel-lang/downloads.svg)](https://packagist.org/packages/overtrue/laravel-lang) [![Latest Unstable Version](https://poser.pugx.org/overtrue/laravel-lang/v/unstable.svg)](https://packagist.org/packages/overtrue/laravel-lang) [![License](https://poser.pugx.org/overtrue/laravel-lang/license.svg)](https://packagist.org/packages/overtrue/laravel-lang)
+[![For Laravel 5][badge_laravel]][link-github-repo]
+[![For Lumen 5][badge_lumen]][link-github-repo]
+
+[![Latest Stable Version][badge_stable]][link-packagist]
+[![Latest Unstable Version][badge_unstable]][link-packagist]
+[![Total Downloads][badge_downloads]][link-packagist]
+[![License][badge_license]][link-packagist]
+
+## Features
+
+- Laravel 5 & Lumen support.
+- Translations Publisher.
+- Made with 💖.
 
 ## Install
 
 ```shell
-$ composer require "overtrue/laravel-lang:~2.0"
+$ composer require "overtrue/laravel-lang:~2.1"
 ```
+
+#### Laraval 5.*
 
 After completion of the above, Replace the `config/app.php` content
 
@@ -23,12 +37,27 @@ with:
 Overtrue\LaravelLang\TranslationServiceProvider::class,
 ```
 
+#### Lumen
+
+Add the following line to `bootstrap/app.php`:
+
+```php
+$app->register(Overtrue\LaravelLang\TranslationServiceProvider::class);
+```
+
 ## Configuration
 
+### Laravel
 you can change the locale at `config/app.php`:
 
 ```php
 'locale' => 'zh-CN',
+```
+
+### Lumen
+
+```
+APP_LOCALE=zh-CN
 ```
 
 ## Usage
@@ -78,15 +107,25 @@ You need only add the partials item what you want.
 ### publish the language files to your project `resources/lang/` directory:
 
 ```shell
-$ php artisan vendor:publish --provider="Overtrue\LaravelLang\TranslationServiceProvider" --tag=resouece
+$ php artisan lang:publish LOCALES {--force}
 ```
 
-or force publish(will overwrite old files):
+examples:
 
 ```shell
-$ php artisan vendor:publish --provider="Overtrue\LaravelLang\TranslationServiceProvider" --tag=resource --force
+$ php artisan lang:publish zh-CN,zh-HK,th,tk
 ```
 
 ## License
 
 MIT
+
+[badge_laravel]:      https://img.shields.io/badge/laravel-5.*-green.svg
+[badge_lumen]:        https://img.shields.io/badge/lumen-5.*-green.svg
+[badge_stable]:       https://img.shields.io/packagist/v/overtrue/laravel-lang.svg
+[badge_unstable]:     https://img.shields.io/packagist/vpre/overtrue/laravel-lang.svg
+[badge_downloads]:    https://img.shields.io/packagist/dt/overtrue/laravel-lang.svg?maxAge=2592000
+[badge_license]:      https://img.shields.io/packagist/l/overtrue/laravel-lang.svg?maxAge=2592000
+
+[link-github-repo]:   https://github.com/overtrue/laravel-lang
+[link-packagist]:   https://packagist.org/packages/overtrue/laravel-lang

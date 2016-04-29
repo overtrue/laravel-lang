@@ -14,7 +14,6 @@ class FileLoader extends LaravelTranslationFileLoader
      */
     protected $multiLangPath;
 
-
     /**
      * Create a new file loader instance.
      *

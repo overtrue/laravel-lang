@@ -2,18 +2,21 @@
 
 namespace Overtrue\LaravelLang;
 
+use Overtrue\LaravelLang\Commands\Publish as PublishCommand;
 use Illuminate\Translation\TranslationServiceProvider as LaravelTranslationServiceProvider;
 
 class TranslationServiceProvider extends LaravelTranslationServiceProvider
 {
     /**
-     * Publish the translation files into project directory.
+     * Register the service provider.
+     *
+     * @return void
      */
-    public function boot()
+    public function register()
     {
-        $this->publishes([
-                app_path('../vendor') . '/caouecs/laravel4-lang/src/' => resource_path('lang/'),
-            ], 'resource');
+        parent::register();
+
+        $this->registerCommands();
     }
 
     /**
@@ -25,9 +28,29 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
     {
         $this->app->singleton('translation.loader', function($app)
         {
-            $multiLangPath = app_path('../vendor') . '/caouecs/laravel4-lang/src';
+            $multiLangPath = app()->basePath().'/vendor/caouecs/laravel4-lang/src/';
 
             return new FileLoader($app['files'], $app['path.lang'], $multiLangPath);
         });
+    }
+
+    /**
+     * Register lang:publish command.
+     *
+     * @return void
+     */
+    protected function registerCommands()
+    {
+        $this->commands(PublishCommand::class);
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [PublishCommand::class];
     }
 }
