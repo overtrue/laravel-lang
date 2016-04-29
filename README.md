@@ -6,19 +6,18 @@
 
 [![For Laravel 5][badge_laravel]][link-github-repo]
 [![For Lumen 5][badge_lumen]][link-github-repo]
-
 [![Latest Stable Version][badge_stable]][link-packagist]
 [![Latest Unstable Version][badge_unstable]][link-packagist]
 [![Total Downloads][badge_downloads]][link-packagist]
 [![License][badge_license]][link-packagist]
 
-## Features
+# Features
 
 - Laravel 5 & Lumen support.
 - Translations Publisher.
 - Made with 💖.
 
-## Install
+# Install
 
 ```shell
 $ composer require "overtrue/laravel-lang:~2.1"
@@ -45,7 +44,7 @@ Add the following line to `bootstrap/app.php`:
 $app->register(Overtrue\LaravelLang\TranslationServiceProvider::class);
 ```
 
-## Configuration
+# Configuration
 
 ### Laravel
 you can change the locale at `config/app.php`:
@@ -56,11 +55,13 @@ you can change the locale at `config/app.php`:
 
 ### Lumen
 
+set locale in `.env` file:
+
 ```
 APP_LOCALE=zh-CN
 ```
 
-## Usage
+# Usage
 
 There is no difference with the usual usage.
 
@@ -116,7 +117,7 @@ examples:
 $ php artisan lang:publish zh-CN,zh-HK,th,tk
 ```
 
-## License
+# License
 
 MIT
 
