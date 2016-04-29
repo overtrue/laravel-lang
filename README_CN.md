@@ -1,25 +1,27 @@
 # Laravel-lang
 
-Laravel 5 语言包，包含 46 种语言, 基于 [caouecs/Laravel-lang](https://github.com/caouecs/Laravel-lang).
+Laravel 5 语言包，包含 52 种语言, 基于 [caouecs/Laravel-lang](https://github.com/caouecs/Laravel-lang).
 
-## 安装
+[![For Laravel 5][badge_laravel]][link-github-repo]
+[![For Lumen 5][badge_lumen]][link-github-repo]
+[![Latest Stable Version][badge_stable]][link-packagist]
+[![Latest Unstable Version][badge_unstable]][link-packagist]
+[![Total Downloads][badge_downloads]][link-packagist]
+[![License][badge_license]][link-packagist]
+
+# Features
+
+- Laravel 5 & Lumen support.
+- Translations Publisher.
+- Made with 💖.
+
+# 安装
 
 ```shell
-composer require "overtrue/laravel-lang:1.0.*"
+composer require "overtrue/laravel-lang:~2.1"
 ```
 
-或者添加下面一行到你的项目 `composer.json` 中 `require` 部分:
-
-```json
-"require": {
-    "overtrue/laravel-lang": "1.0.*"
-}
-```
-然后
-
-```shell
-composer update
-```
+#### Laraval 5.*
 
 完成上面的操作后，将项目文件 `config/app.php` 中的下一行
 
@@ -33,9 +35,17 @@ Illuminate\Translation\TranslationServiceProvider::class,
 Overtrue\LaravelLang\TranslationServiceProvider::class,
 ```
 
-即可。
+#### Lumen
 
-## 配置
+在 `bootstrap/app.php` 中添加下面这行:
+
+```php
+$app->register(Overtrue\LaravelLang\TranslationServiceProvider::class);
+```
+
+# 配置
+
+### Laravel
 
 修改项目语言 `config/app.php`：
 
@@ -43,7 +53,16 @@ Overtrue\LaravelLang\TranslationServiceProvider::class,
 'locale' => 'zh-CN',
 ```
 
-## 使用
+### Lumen
+
+在 `.env` 文件中修改语言：
+```
+APP_LOCALE=zh-CN
+```
+
+
+
+# 使用
 
 和正常使用一样，你如果需要额外添加语言项，请在 `resources/lang/zh-CN/` 下建立你自己的文件即可，也可以建立同样的文件来替换掉默认的语言部分。
 
@@ -85,15 +104,26 @@ return [
 ### 将翻译文件拷贝到你的项目 `resources/lang/` 目录下:
 
 ```shell
-$ php artisan vendor:publish --provider="Overtrue\LaravelLang\TranslationServiceProvider" --tag=resouece
+$ php artisan lang:publish LOCALES {--force}
 ```
 
-当然你也可以强制拷贝(将会覆盖原有同名文件哦):
+examples:
 
 ```shell
-$ php artisan vendor:publish --provider="Overtrue\LaravelLang\TranslationServiceProvider" --tag=resource --force
+$ php artisan lang:publish zh-CN,zh-HK,th,tk
 ```
 
-## License
+# License
 
 MIT
+
+
+[badge_laravel]:      https://img.shields.io/badge/laravel-5.*-green.svg
+[badge_lumen]:        https://img.shields.io/badge/lumen-5.*-green.svg
+[badge_stable]:       https://img.shields.io/packagist/v/overtrue/laravel-lang.svg
+[badge_unstable]:     https://img.shields.io/packagist/vpre/overtrue/laravel-lang.svg
+[badge_downloads]:    https://img.shields.io/packagist/dt/overtrue/laravel-lang.svg?maxAge=2592000
+[badge_license]:      https://img.shields.io/packagist/l/overtrue/laravel-lang.svg?maxAge=2592000
+
+[link-github-repo]:   https://github.com/overtrue/laravel-lang
+[link-packagist]:   https://packagist.org/packages/overtrue/laravel-lang

@@ -1,33 +1,78 @@
 <?php
 
+/*
+ * This file is part of the overtrue/laravel-lang.
+ *
+ * (c) overtrue <i@overtrue.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Overtrue\LaravelLang;
 
 use Illuminate\Translation\TranslationServiceProvider as LaravelTranslationServiceProvider;
+use Overtrue\LaravelLang\Commands\Publish as PublishCommand;
 
 class TranslationServiceProvider extends LaravelTranslationServiceProvider
 {
     /**
-     * Publish the translation files into project directory.
+     * @var bool
      */
-    public function boot()
+    protected $inLumen = false;
+
+    /**
+     * Register the service provider.
+     */
+    public function register()
     {
-        $this->publishes([
-                app_path('../vendor') . '/caouecs/laravel4-lang/src/' => resource_path('lang/'),
-            ], 'resource');
+        if ($this->app instanceof \Laravel\Lumen\Application) {
+            $this->inLumen = true;
+
+            $this->app->configure('app');
+
+            unset($this->app->availableBindings['translator']);
+        }
+
+        parent::register();
+
+        $this->registerCommands();
     }
 
     /**
      * Register the translation line loader.
-     *
-     * @return void
      */
     protected function registerLoader()
     {
-        $this->app->singleton('translation.loader', function($app)
-        {
-            $multiLangPath = app_path('../vendor') . '/caouecs/laravel4-lang/src';
+        $this->app->singleton('translation.loader', function ($app) {
+            $paths = [
+                app()->basePath('vendor/caouecs/laravel-lang/src/'),
+            ];
 
-            return new FileLoader($app['files'], $app['path.lang'], $multiLangPath);
+            if ($this->inLumen) {
+                $this->app['path.lang'] = app()->basePath('vendor/laravel/lumen-framework/resources/lang');
+                array_push($paths, app()->basePath('resources/lang/'));
+            }
+
+            return new FileLoader($app['files'], $app['path.lang'], $paths);
         });
+    }
+
+    /**
+     * Register lang:publish command.
+     */
+    protected function registerCommands()
+    {
+        $this->commands(PublishCommand::class);
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return array_merge(parent::provides(), [PublishCommand::class]);
     }
 }
