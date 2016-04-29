@@ -18,7 +18,7 @@ Laravel 5 语言包，包含 52 种语言, 基于 [caouecs/Laravel-lang](https:/
 # 安装
 
 ```shell
-composer require "overtrue/laravel-lang:~2.1"
+composer require "overtrue/laravel-lang:~3.0"
 ```
 
 #### Laraval 5.*
