@@ -1,9 +1,18 @@
 <?php
 
+/*
+ * This file is part of the overtrue/laravel-lang.
+ *
+ * (c) overtrue <i@overtrue.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Overtrue\LaravelLang;
 
-use Illuminate\Translation\FileLoader as LaravelTranslationFileLoader;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Translation\FileLoader as LaravelTranslationFileLoader;
 
 class FileLoader extends LaravelTranslationFileLoader
 {
@@ -15,9 +24,8 @@ class FileLoader extends LaravelTranslationFileLoader
     /**
      * Create a new file loader instance.
      *
-     * @param  \Illuminate\Filesystem\Filesystem  $files
-     * @param  array  $path
-     * @return void
+     * @param \Illuminate\Filesystem\Filesystem $files
+     * @param array                             $path
      */
     public function __construct(Filesystem $files, $path, $paths = [])
     {
@@ -29,9 +37,10 @@ class FileLoader extends LaravelTranslationFileLoader
     /**
      * Load the messages for the given locale.
      *
-     * @param  string  $locale
-     * @param  string  $group
-     * @param  string  $namespace
+     * @param string $locale
+     * @param string $group
+     * @param string $namespace
+     *
      * @return array
      */
     public function load($locale, $group, $namespace = null)

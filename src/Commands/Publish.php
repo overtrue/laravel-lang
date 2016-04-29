@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the overtrue/laravel-lang.
+ *
+ * (c) overtrue <i@overtrue.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Overtrue\LaravelLang\Commands;
 
 use Illuminate\Console\Command;
@@ -11,7 +20,7 @@ class Publish extends Command
                             {locales=all : Comma-separated list of, eg: zh_CN,tk,th}
                             {--force : override existing files.}';
 
-    protected $description = "publish language files to resources directory.";
+    protected $description = 'publish language files to resources directory.';
 
     public function __construct()
     {
@@ -54,7 +63,7 @@ class Publish extends Command
                 $files[] = $file;
             }
 
-            $files = join(' ', $files);
+            $files = implode(' ', $files);
             $message = json_encode($published);
         }
 
