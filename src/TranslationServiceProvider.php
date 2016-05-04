@@ -46,12 +46,12 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
     {
         $this->app->singleton('translation.loader', function ($app) {
             $paths = [
-                app()->basePath('vendor/caouecs/laravel-lang/src/'),
+                base_path('vendor/caouecs/laravel-lang/src/'),
             ];
 
             if ($this->inLumen) {
-                $this->app['path.lang'] = app()->basePath('vendor/laravel/lumen-framework/resources/lang');
-                array_push($paths, app()->basePath('resources/lang/'));
+                $this->app['path.lang'] = base_path('vendor/laravel/lumen-framework/resources/lang');
+                array_push($paths, base_path('resources/lang/'));
             }
 
             return new FileLoader($app['files'], $app['path.lang'], $paths);
