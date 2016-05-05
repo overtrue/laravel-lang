@@ -37,8 +37,8 @@ class Publish extends Command
         $locale = $this->argument('locales');
         $force = $this->option('force') ? 'f' : 'n';
 
-        $sourcePath = app()->basePath().'/vendor/caouecs/laravel-lang/src';
-        $targetPath = app()->basePath().'/resources/lang/';
+        $sourcePath = base_path('vendor/caouecs/laravel-lang/src');
+        $targetPath = base_path('resources/lang/');
 
         if (!is_dir($targetPath) || !is_writable($targetPath)) {
             return $this->error('The lang path "resources/lang/" does not exist or not writable.');
