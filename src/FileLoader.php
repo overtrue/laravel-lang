@@ -1,30 +1,35 @@
 <?php
 
+/*
+ * This file is part of the overtrue/laravel-lang.
+ *
+ * (c) overtrue <i@overtrue.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Overtrue\LaravelLang;
 
-use Illuminate\Translation\FileLoader as LaravelTranslationFileLoader;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Translation\FileLoader as LaravelTranslationFileLoader;
 
 class FileLoader extends LaravelTranslationFileLoader
 {
     /**
-     * 37 languages dir.
-     *
      * @var string
      */
-    protected $multiLangPath;
-
+    protected $paths;
 
     /**
      * Create a new file loader instance.
      *
-     * @param  \Illuminate\Filesystem\Filesystem  $files
-     * @param  string  $path
-     * @return void
+     * @param \Illuminate\Filesystem\Filesystem $files
+     * @param array                             $path
      */
-    public function __construct(Filesystem $files, $path, $multiLangPath)
+    public function __construct(Filesystem $files, $path, $paths = [])
     {
-        $this->multiLangPath = $multiLangPath;
+        $this->paths = $paths;
 
         parent::__construct($files, $path);
     }
@@ -32,14 +37,19 @@ class FileLoader extends LaravelTranslationFileLoader
     /**
      * Load the messages for the given locale.
      *
-     * @param  string  $locale
-     * @param  string  $group
-     * @param  string  $namespace
+     * @param string $locale
+     * @param string $group
+     * @param string $namespace
+     *
      * @return array
      */
     public function load($locale, $group, $namespace = null)
     {
-        $defaults = $this->loadPath($this->multiLangPath, $locale, $group);
+        $defaults = [];
+
+        foreach ($this->paths as $path) {
+            $defaults = array_replace_recursive($defaults, $this->loadPath($path, $locale, $group));
+        }
 
         return array_replace_recursive($defaults, parent::load($locale, $group, $namespace));
     }

@@ -12,7 +12,8 @@
     "autoload": {
         "psr-4": {
             "Overtrue\\LaravelLang\\": "src/"
-        }
+        },
+        "files": ["src/helpers.php"]
     },
     "license": "MIT",
     "authors": [
