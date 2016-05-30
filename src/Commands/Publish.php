@@ -63,6 +63,10 @@ class Publish extends Command
                 $files[] = $file;
             }
 
+            if (empty($files)) {
+                return;
+            }
+
             $files = implode(' ', $files);
             $message = json_encode($published);
         }
