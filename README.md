@@ -108,7 +108,7 @@ You need only add the partials item what you want.
 ### publish the language files to your project `resources/lang/` directory:
 
 ```shell
-$ php artisan lang:publish LOCALES {--force}
+$ php artisan lang:publish [LOCALES] {--force}
 ```
 
 examples:

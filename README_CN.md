@@ -104,7 +104,7 @@ return [
 ### 将翻译文件拷贝到你的项目 `resources/lang/` 目录下:
 
 ```shell
-$ php artisan lang:publish LOCALES {--force}
+$ php artisan lang:publish [LOCALES] {--force}
 ```
 
 examples:
