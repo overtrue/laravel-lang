@@ -53,4 +53,26 @@ class FileLoader extends LaravelTranslationFileLoader
 
         return array_replace_recursive($defaults, parent::load($locale, $group, $namespace));
     }
+    
+        /**
+     * Fall back to base locale (i.e. de) if a countries specific locale (i.e. de-CH) is not available
+     *
+     * @param string $path
+     * @param string $locale
+     * @param string $group
+     * @return array|mixed
+     */
+    protected function loadPath($path, $locale, $group)
+    {
+        $result = parent::loadPath($path, $locale, $group);
+
+        if ($result == [] && strpos($locale, '-') !== false) {
+            list($baseLocale) = explode('-', $locale);
+            if ($this->files->exists($full = "{$path}/{$baseLocale}/{$group}.php")) {
+                return $this->files->getRequire($full);
+            }
+        }
+
+        return $result;
+    }
 }
