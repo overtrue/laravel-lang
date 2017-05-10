@@ -9,41 +9,37 @@
  * with this source code in the file LICENSE.
  */
 
-if (!function_exists('trans')) {
+if (! function_exists('trans')) {
     /**
      * Translate the given message.
      *
-     * @param string $id
-     * @param array  $parameters
-     * @param string $domain
-     * @param string $locale
-     *
-     * @return \Symfony\Component\Translation\TranslatorInterface|string
+     * @param  string  $id
+     * @param  array   $replace
+     * @param  string  $locale
+     * @return \Illuminate\Contracts\Translation\Translator|string
      */
-    function trans($id = null, $parameters = [], $domain = 'messages', $locale = null)
+    function trans($id = null, $replace = [], $locale = null)
     {
         if (is_null($id)) {
             return app('translator');
         }
 
-        return app('translator')->trans($id, $parameters, $domain, $locale);
+        return app('translator')->trans($id, $replace, $locale);
     }
 }
 
-if (!function_exists('trans_choice')) {
+if (! function_exists('trans_choice')) {
     /**
      * Translates the given message based on a count.
      *
-     * @param string               $id
-     * @param int|array|\Countable $number
-     * @param array                $parameters
-     * @param string               $domain
-     * @param string               $locale
-     *
+     * @param  string  $id
+     * @param  int|array|\Countable  $number
+     * @param  array   $replace
+     * @param  string  $locale
      * @return string
      */
-    function trans_choice($id, $number, array $parameters = [], $domain = 'messages', $locale = null)
+    function trans_choice($id, $number, array $replace = [], $locale = null)
     {
-        return app('translator')->transChoice($id, $number, $parameters, $domain, $locale);
+        return app('translator')->transChoice($id, $number, $replace, $locale);
     }
 }
