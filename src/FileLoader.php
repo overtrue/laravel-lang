@@ -55,7 +55,7 @@ class FileLoader extends LaravelTranslationFileLoader
     }
 
     /**
-     * Fall back to base locale (i.e. de) if a countries specific locale (i.e. de-CH) is not available
+     * Fall back to base locale (i.e. de) if a countries specific locale (i.e. de-CH) is not available.
      *
      * @param string $path
      * @param string $locale
