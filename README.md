@@ -1,15 +1,11 @@
-# Laravel-lang
-
-52 languages support for Laravel 5 application based on [caouecs/Laravel-lang](https://github.com/caouecs/Laravel-lang).
-
-[中文说明](README_CN.md)
-
-[![For Laravel 5][badge_laravel]][link-github-repo]
-[![For Lumen 5][badge_lumen]][link-github-repo]
-[![Latest Stable Version][badge_stable]][link-packagist]
-[![Latest Unstable Version][badge_unstable]][link-packagist]
-[![Total Downloads][badge_downloads]][link-packagist]
-[![License][badge_license]][link-packagist]
+<h1 align="center">Laravel-lang</h1>
+<p align="center">52 languages support for Laravel 5 application based on <a href="https://github.com/caouecs/Laravel-lang">caouecs/Laravel-lang</a>. <a href="/overtrue/laravel-lang/blob/master/README_CN.md">中文说明</a></p>
+<p align="center"><a href="https://github.com/overtrue/laravel-lang"><img alt="For Laravel 5" src="https://img.shields.io/badge/laravel-5.*-green.svg" style="max-width:100%;"></a>
+<a href="https://github.com/overtrue/laravel-lang"><img alt="For Lumen 5" src="https://img.shields.io/badge/lumen-5.*-green.svg" style="max-width:100%;"></a>
+<a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="Latest Stable Version" src="https://img.shields.io/packagist/v/overtrue/laravel-lang.svg" style="max-width:100%;"></a>
+<a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="Latest Unstable Version" src="https://img.shields.io/packagist/vpre/overtrue/laravel-lang.svg" style="max-width:100%;"></a>
+<a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/overtrue/laravel-lang.svg?maxAge=2592000" style="max-width:100%;"></a>
+<a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="License" src="https://img.shields.io/packagist/l/overtrue/laravel-lang.svg?maxAge=2592000" style="max-width:100%;"></a></p>
 
 <p align="center">
   <br>
