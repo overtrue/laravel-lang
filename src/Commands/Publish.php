@@ -16,15 +16,30 @@ use Symfony\Component\Process\Process;
 
 class Publish extends Command
 {
+    /**
+     * @var string
+     */
     protected $signature = 'lang:publish
                             {locales=all : Comma-separated list of, eg: zh_CN,tk,th}
                             {--force : override existing files.}';
 
+    /**
+     * @var string
+     */
     protected $description = 'publish language files to resources directory.';
 
+    /**
+     * @var bool
+     */
+    protected $inLumen = false;
+
+    /**
+     * Publish constructor.
+     */
     public function __construct()
     {
         parent::__construct();
+        $this->inLumen = $this->laravel instanceof \Laravel\Lumen\Application;
     }
 
     /**
@@ -46,13 +61,19 @@ class Publish extends Command
 
         $files = [];
         $published = [];
+        $copyEnFiles = false;
 
         if ($locale == 'all') {
-            $files = $sourcePath.'/*';
+            $files = [$sourcePath.'/*'];
             $message = 'all';
+            $copyEnFiles = true;
         } else {
             foreach (explode(',', $locale) as $filename) {
                 $file = $sourcePath.'/'.trim($filename);
+
+                if ($locale === 'en') {
+                    $copyEnFiles = true;
+                }
 
                 if (!file_exists($file)) {
                     $this->error("lang '$filename' not found.");
@@ -67,10 +88,14 @@ class Publish extends Command
                 return;
             }
 
-            $files = implode(' ', $files);
             $message = json_encode($published);
         }
 
+        if ($this->inLumen && $copyEnFiles) {
+            $files[] = base_path('vendor/laravel/lumen-framework/resources/lang/en');
+        }
+
+        $files = implode(' ', $files);
         $process = new Process("cp -r{$force} $files $targetPath");
 
         $process->run(function ($type, $buffer) {
