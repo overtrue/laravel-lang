@@ -71,6 +71,7 @@ class Publish extends Command
             foreach (explode(',', $locale) as $filename) {
                 if ($locale === 'en') {
                     $copyEnFiles = true;
+
                     continue;
                 }
                 $file = $sourcePath.'/'.trim($filename);
