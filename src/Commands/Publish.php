@@ -29,17 +29,11 @@ class Publish extends Command
     protected $description = 'publish language files to resources directory.';
 
     /**
-     * @var bool
-     */
-    protected $inLumen = false;
-
-    /**
      * Publish constructor.
      */
     public function __construct()
     {
         parent::__construct();
-        $this->inLumen = $this->laravel instanceof \Laravel\Lumen\Application;
     }
 
     /**
@@ -55,13 +49,14 @@ class Publish extends Command
         $sourcePath = base_path('vendor/caouecs/laravel-lang/src');
         $targetPath = base_path('resources/lang/');
 
-        if (!is_dir($targetPath) || !is_writable($targetPath)) {
+        if (!is_dir($targetPath) && !mkdir($targetPath)) {
             return $this->error('The lang path "resources/lang/" does not exist or not writable.');
         }
 
         $files = [];
         $published = [];
         $copyEnFiles = false;
+        $inLumen = $this->laravel instanceof \Laravel\Lumen\Application;
 
         if ($locale == 'all') {
             $files = [$sourcePath.'/*'];
@@ -93,7 +88,7 @@ class Publish extends Command
             $message = json_encode($published);
         }
 
-        if ($this->inLumen && $copyEnFiles) {
+        if ($inLumen && $copyEnFiles) {
             $files[] = base_path('vendor/laravel/lumen-framework/resources/lang/en');
         }
 
