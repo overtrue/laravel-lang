@@ -77,6 +77,7 @@ class Publish extends Command
 
                 if (!file_exists($file)) {
                     $this->error("lang '$filename' not found.");
+
                     continue;
                 }
 
