@@ -58,13 +58,13 @@ class Publish extends Command
         $copyEnFiles = false;
         $inLumen = $this->laravel instanceof \Laravel\Lumen\Application;
 
-        if ($locale == 'all') {
+        if ('all' == $locale) {
             $files = [$sourcePath.'/*'];
             $message = 'all';
             $copyEnFiles = true;
         } else {
             foreach (explode(',', $locale) as $filename) {
-                if ($locale === 'en') {
+                if ('en' === $locale) {
                     $copyEnFiles = true;
 
                     continue;
@@ -101,7 +101,7 @@ class Publish extends Command
             }
         });
 
-        $type = ($force == 'f') ? 'overwrite' : 'no overwrite';
+        $type = ('f' == $force) ? 'overwrite' : 'no overwrite';
 
         $this->info("published languages <comment>({$type})</comment>: {$message}.");
     }
