@@ -88,7 +88,7 @@ echo trans('demo.email_has_registed', ['email' => 'anzhengchao@gmail.com']);
 
 ### 替换掉默认的语言项
 
-我们假设想替换掉密码重围成功的提示文字为例，创建 `resources/lang/zh-CN/passwords.php`:
+我们假设想替换掉密码重置成功的提示文字为例，创建 `resources/lang/zh-CN/passwords.php`:
 
 ```php
 <?php
