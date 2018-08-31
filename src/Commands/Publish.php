@@ -62,7 +62,7 @@ class Publish extends Command
         if ('all' == $locale) {
             $files = [
                 $sourcePath.'/*',
-                $jsonSourcePath
+                $jsonSourcePath,
             ];
             $message = 'all';
             $copyEnFiles = true;
