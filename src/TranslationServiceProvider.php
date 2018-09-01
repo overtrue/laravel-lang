@@ -56,7 +56,6 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
                 array_push($paths, base_path('resources/lang/'));
             }
 
-
             $loader = new FileLoader($app['files'], $app['path.lang'], $paths);
 
             $loader->addJsonPath($jsonPath);
