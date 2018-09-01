@@ -49,12 +49,15 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
                 base_path('vendor/caouecs/laravel-lang/src/'),
             ];
 
+            $jsonPath = base_path('vendor/caouecs/laravel-lang/json/');
+
             if ($this->inLumen) {
                 $this->app['path.lang'] = base_path('vendor/laravel/lumen-framework/resources/lang');
                 array_push($paths, base_path('resources/lang/'));
             }
 
-            return new FileLoader($app['files'], $app['path.lang'], $paths);
+            return (new FileLoader($app['files'], $app['path.lang'], $paths))
+                ->addJsonPath($jsonPath);
         });
     }
 
