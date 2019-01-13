@@ -104,6 +104,11 @@ class Publish extends Command
             $files[] = base_path('vendor/laravel/lumen-framework/resources/lang/en');
         }
 
+        for ($i = 0; $i < count($files);$i++) {
+            $files[$i] = str_replace(' ','\ ', $files[$i]);
+        }
+        $targetPath = str_replace(' ','\ ', $targetPath);
+
         $files = implode(' ', $files);
         $process = new Process("cp -r{$force} $files $targetPath");
 
