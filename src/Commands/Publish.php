@@ -105,7 +105,7 @@ class Publish extends Command
         }
 
         $files = implode(' ', $files);
-        $process = new Process("cp -r{$force} $files $targetPath");
+        $process = new Process(['cp', "-r{$force}", $files, $targetPath]);
 
         $process->run(function ($type, $buffer) {
             if (Process::ERR === $type) {
