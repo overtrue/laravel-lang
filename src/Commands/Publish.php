@@ -104,8 +104,10 @@ class Publish extends Command
             $files[] = base_path('vendor/laravel/lumen-framework/resources/lang/en');
         }
 
-        $files = implode(' ', $files);
-        $process = new Process(['cp', "-r{$force}", $files, $targetPath]);
+        $files = implode(' ', \array_map('escapeshellarg', $files));
+        $targetPath = escapeshellarg($targetPath);
+        $command = "cp -r{$force} {$files} {$targetPath}";
+        $process = \method_exists(Process::class, 'fromShellCommandline') ? Process::fromShellCommandline($command) : new Process($command);
 
         $process->run(function ($type, $buffer) {
             if (Process::ERR === $type) {
