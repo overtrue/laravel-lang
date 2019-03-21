@@ -20,7 +20,7 @@
 $ composer require "overtrue/laravel-lang:~3.0"
 ```
 
-#### Laraval 5.*
+#### Laravel 5.*
 
 After completion of the above, Replace the `config/app.php` content
 
