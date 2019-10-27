@@ -1,6 +1,6 @@
 # Laravel-lang
 
-Laravel 5 语言包，包含 52 种语言, 基于 [caouecs/Laravel-lang](https://github.com/caouecs/Laravel-lang).
+Laravel 5 语言包，包含 68 种语言, 基于 [caouecs/Laravel-lang](https://github.com/caouecs/Laravel-lang).
 
 [![For Laravel 5][badge_laravel]][link-github-repo]
 [![For Lumen 5][badge_lumen]][link-github-repo]
