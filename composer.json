@@ -4,10 +4,13 @@
     "keywords": [
         "laravel",
         "languages",
+        "i18n",
+        "locale",
         "overtrue"
     ],
     "require": {
-        "caouecs/laravel-lang": "~3.0"
+        "caouecs/laravel-lang": "~4.0",
+        "symfony/process": "^5.0.0"
     },
     "autoload": {
         "psr-4": {

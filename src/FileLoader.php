@@ -11,8 +11,8 @@
 
 namespace Overtrue\LaravelLang;
 
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Translation\FileLoader as LaravelTranslationFileLoader;
 
 class FileLoader extends LaravelTranslationFileLoader

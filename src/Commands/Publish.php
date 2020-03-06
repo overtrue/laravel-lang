@@ -61,8 +61,8 @@ class Publish extends Command
 
         if ('all' == $locale) {
             $files = [
-                $sourcePath.'/*',
-                $sourceJsonPath,
+                \addslashes($sourcePath).'/*',
+                escapeshellarg($sourceJsonPath),
             ];
             $message = 'all';
             $copyEnFiles = true;
@@ -83,14 +83,14 @@ class Publish extends Command
                 }
 
                 $published[] = $filename;
-                $files[] = $file;
+                $files[] = escapeshellarg($file);
 
                 if (!file_exists($jsonFile)) {
                     $this->error("lang '$filename' not found.");
 
                     continue;
                 }
-                $files[] = $jsonFile;
+                $files[] = escapeshellarg($jsonFile);
             }
 
             if (empty($files)) {
@@ -101,11 +101,13 @@ class Publish extends Command
         }
 
         if ($inLumen && $copyEnFiles) {
-            $files[] = base_path('vendor/laravel/lumen-framework/resources/lang/en');
+            $files[] = escapeshellarg(base_path('vendor/laravel/lumen-framework/resources/lang/en'));
         }
 
         $files = implode(' ', $files);
-        $process = new Process("cp -r{$force} $files $targetPath");
+        $targetPath = escapeshellarg($targetPath);
+        $command = "cp -r{$force} {$files} {$targetPath}";
+        $process = \method_exists(Process::class, 'fromShellCommandline') ? Process::fromShellCommandline($command) : new Process($command);
 
         $process->run(function ($type, $buffer) {
             if (Process::ERR === $type) {
