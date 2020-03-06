@@ -28,5 +28,8 @@
                 "Overtrue\\LaravelLang\\TranslationServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "laravel/framework": "~7.0"
     }
 }
