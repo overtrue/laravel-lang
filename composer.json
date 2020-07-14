@@ -9,7 +9,7 @@
         "overtrue"
     ],
     "require": {
-        "caouecs/laravel-lang": "~6.0",
+        "caouecs/laravel-lang": "~7.0",
         "symfony/process": "^5.0.0"
     },
     "autoload": {
