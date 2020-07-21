@@ -10,7 +10,7 @@
 
 # Features
 
-- Laravel 5 & Lumen support.
+- Laravel 5+ && Lumen support.
 - Translations Publisher.
 - Made with 💖.
 
