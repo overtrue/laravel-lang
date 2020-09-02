@@ -1,6 +1,6 @@
 {
     "name": "overtrue/laravel-lang",
-    "description": "List of 52 languages for Laravel 5",
+    "description": "List of 75 languages for Laravel 4, 5, 6 and 7",
     "keywords": [
         "laravel",
         "languages",
@@ -9,8 +9,9 @@
         "overtrue"
     ],
     "require": {
-        "caouecs/laravel-lang": "~7.0",
-        "symfony/process": "^5.0.0"
+        "laravel-lang/lang": "~7.0",
+        "symfony/process": "^5.0.0",
+        "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
@@ -34,5 +35,9 @@
     },
     "require-dev": {
         "laravel/framework": "~7.0"
+    },
+    "scripts": {
+        "check-style": "php-cs-fixer fix --using-cache=no --diff --config=.php_cs --dry-run --ansi",
+        "fix-style": "php-cs-fixer fix --using-cache=no --config=.php_cs --ansi"
     }
 }

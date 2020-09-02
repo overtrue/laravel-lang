@@ -1,5 +1,5 @@
 <h1 align="center">Laravel-lang</h1>
-<p align="center">75 languages support for Laravel 5 application based on <a href="https://github.com/caouecs/Laravel-lang">caouecs/Laravel-lang</a>. <a href="https://github.com/overtrue/laravel-lang/blob/master/README_CN.md">中文说明</a></p>
+<p align="center">75 languages support for Laravel 5 application based on <a href="https://github.com/Laravel-Lang/lang">Laravel-Lang/lang</a>.
 <p align="center"><a href="https://github.com/overtrue/laravel-lang"><img alt="For Laravel 5" src="https://img.shields.io/badge/laravel-5.*-green.svg" style="max-width:100%;"></a>
 <a href="https://github.com/overtrue/laravel-lang"><img alt="For Lumen 5" src="https://img.shields.io/badge/lumen-5.*-green.svg" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="Latest Stable Version" src="https://img.shields.io/packagist/v/overtrue/laravel-lang.svg" style="max-width:100%;"></a>
@@ -123,13 +123,3 @@ $ php artisan lang:publish zh_CN,zh_HK,th,tk
 # License
 
 MIT
-
-[badge_laravel]:      https://img.shields.io/badge/laravel-5.*-green.svg
-[badge_lumen]:        https://img.shields.io/badge/lumen-5.*-green.svg
-[badge_stable]:       https://img.shields.io/packagist/v/overtrue/laravel-lang.svg
-[badge_unstable]:     https://img.shields.io/packagist/vpre/overtrue/laravel-lang.svg
-[badge_downloads]:    https://img.shields.io/packagist/dt/overtrue/laravel-lang.svg?maxAge=2592000
-[badge_license]:      https://img.shields.io/packagist/l/overtrue/laravel-lang.svg?maxAge=2592000
-
-[link-github-repo]:   https://github.com/overtrue/laravel-lang
-[link-packagist]:   https://packagist.org/packages/overtrue/laravel-lang

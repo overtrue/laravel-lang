@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the overtrue/laravel-lang.
- *
- * (c) overtrue <i@overtrue.me>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
 namespace Overtrue\LaravelLang;
 
 use Illuminate\Support\Str;
@@ -27,6 +18,7 @@ class FileLoader extends LaravelTranslationFileLoader
      *
      * @param \Illuminate\Filesystem\Filesystem $files
      * @param array                             $path
+     * @param array                             $paths
      */
     public function __construct(Filesystem $files, $path, $paths = [])
     {
