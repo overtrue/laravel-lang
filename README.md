@@ -47,7 +47,7 @@ $app->register(Overtrue\LaravelLang\TranslationServiceProvider::class);
 you can change the locale at `config/app.php`:
 
 ```php
-'locale' => 'zh_CN',
+'locale' => 'zh-CN',
 ```
 
 ### Lumen
@@ -55,7 +55,7 @@ you can change the locale at `config/app.php`:
 set locale in `.env` file:
 
 ```
-APP_LOCALE=zh_CN
+APP_LOCALE=zh-CN
 ```
 
 # Usage
