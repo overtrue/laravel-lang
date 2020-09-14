@@ -34,7 +34,7 @@
         }
     },
     "require-dev": {
-        "laravel/framework": "~7.0"
+        "laravel/framework": "~8.1"
     },
     "scripts": {
         "check-style": "php-cs-fixer fix --using-cache=no --diff --config=.php_cs --dry-run --ansi",
