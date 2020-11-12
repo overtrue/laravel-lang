@@ -9,15 +9,14 @@
         "overtrue"
     ],
     "require": {
-        "laravel-lang/lang": "~7.0",
+        "laravel-lang/lang": "^7.0",
         "symfony/process": "^5.0.0",
         "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
             "Overtrue\\LaravelLang\\": "src/"
-        },
-        "files": ["src/helpers.php"]
+        }
     },
     "license": "MIT",
     "authors": [
