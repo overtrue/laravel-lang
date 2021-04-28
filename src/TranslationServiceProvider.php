@@ -12,7 +12,7 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
     public function boot()
     {
         $this->publishes([
-                app_path('../vendor') . '/caouecs/laravel4-lang/src/' => resource_path('lang/'),
+                app_path('../vendor') . '/laravel-lang/lang/src' => resource_path('lang/'),
             ], 'resource');
     }
 
@@ -25,7 +25,7 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
     {
         $this->app->singleton('translation.loader', function($app)
         {
-            $multiLangPath = app_path('../vendor') . '/caouecs/laravel4-lang/src';
+            $multiLangPath = app_path('../vendor') . '/laravel-lang/lang/src';
 
             return new FileLoader($app['files'], $app['path.lang'], $multiLangPath);
         });
