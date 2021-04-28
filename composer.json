@@ -7,13 +7,15 @@
         "overtrue"
     ],
     "require": {
-        "caouecs/laravel-lang": "~3.0"
+        "laravel-lang/lang": "~3.0"
     },
     "autoload": {
         "psr-4": {
             "Overtrue\\LaravelLang\\": "src/"
         },
-        "files": ["src/helpers.php"]
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "license": "MIT",
     "authors": [
