@@ -40,7 +40,7 @@ class FileLoader extends LaravelTranslationFileLoader
     {
         $defaults = [];
 
-        $locale = str_replace('-', '_', $locale);
+        $locale = str_replace('_', '-', $locale);
 
         foreach ($this->paths as $path) {
             $defaults = array_replace_recursive($defaults, $this->loadPath($path, $locale, $group));
