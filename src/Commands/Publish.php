@@ -62,7 +62,7 @@ class Publish extends Command
         if ('all' == $locale) {
             $files = [
                 $sourcePath.'/*',
-                $jsonSourcePath,
+                $sourceJsonPath,
             ];
             $message = 'all';
             $copyEnFiles = true;
@@ -75,7 +75,7 @@ class Publish extends Command
                 }
                 $locale = str_replace('_', '-', $locale);
                 $file = $sourcePath.'/'.trim($filename);
-                $jsonFile = $jsonSourcePath.'/'.trim($filename).'.json';
+                $jsonFile = $sourceJsonPath.'/'.trim($filename).'.json';
 
                 if (!file_exists($file)) {
                     $this->error("lang '$filename' not found.");
