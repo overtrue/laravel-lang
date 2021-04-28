@@ -73,7 +73,7 @@ class Publish extends Command
 
                     continue;
                 }
-                $locale = str_replace('_', '-', $locale);
+                $filename = str_replace('_', '-', $locale);
                 $file = $sourcePath.'/'.trim($filename);
                 $jsonFile = $sourceJsonPath.'/'.trim($filename).'.json';
 
