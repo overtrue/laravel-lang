@@ -7,7 +7,6 @@
 <a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/overtrue/laravel-lang.svg?maxAge=2592000" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="License" src="https://img.shields.io/packagist/l/overtrue/laravel-lang.svg?maxAge=2592000" style="max-width:100%;"></a></p>
 
-
 # Features
 
 - Laravel 5+ && Lumen support.
@@ -17,20 +16,7 @@
 # Install
 
 ```shell
-$ composer require "overtrue/laravel-lang:~3.0"
-```
-
-#### Laravel 5.*
-
-After completion of the above, Replace the `config/app.php` content
-
-```php
-Illuminate\Translation\TranslationServiceProvider::class,
-```
-with:
-
-```php
-Overtrue\LaravelLang\TranslationServiceProvider::class,
+$ composer require "overtrue/laravel-lang:~4.0"
 ```
 
 #### Lumen
@@ -44,6 +30,7 @@ $app->register(Overtrue\LaravelLang\TranslationServiceProvider::class);
 # Configuration
 
 ### Laravel
+
 you can change the locale at `config/app.php`:
 
 ```php
@@ -62,7 +49,7 @@ APP_LOCALE=zh_CN
 
 There is no difference with the usual usage.
 
-If you need to add additional language content, Please create a file in the `resources/lang/{LANGUAGE}`  directory.
+If you need to add additional language content, Please create a file in the `resources/lang/{LANGUAGE}` directory.
 
 ### Add custom language items
 
@@ -78,6 +65,7 @@ return [
     'email_has_registed' => '邮箱 :email 已经注册过！',
 ];
 ```
+
 Used in the template:
 
 ```php
