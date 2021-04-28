@@ -1,12 +1,11 @@
 <h1 align="center">Laravel-lang</h1>
-<p align="center">75 languages support for Laravel 5 application based on <a href="https://github.com/Laravel-Lang/lang">Laravel-Lang/lang</a>.
+<p align="center">75 languages support for Laravel application based on <a href="https://github.com/Laravel-Lang/lang">Laravel-Lang/lang</a>.
 <p align="center"><a href="https://github.com/overtrue/laravel-lang"><img alt="For Laravel 5" src="https://img.shields.io/badge/laravel-5.*-green.svg" style="max-width:100%;"></a>
 <a href="https://github.com/overtrue/laravel-lang"><img alt="For Lumen 5" src="https://img.shields.io/badge/lumen-5.*-green.svg" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="Latest Stable Version" src="https://img.shields.io/packagist/v/overtrue/laravel-lang.svg" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="Latest Unstable Version" src="https://img.shields.io/packagist/vpre/overtrue/laravel-lang.svg" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/overtrue/laravel-lang.svg?maxAge=2592000" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="License" src="https://img.shields.io/packagist/l/overtrue/laravel-lang.svg?maxAge=2592000" style="max-width:100%;"></a></p>
-
 
 # Features
 
@@ -16,21 +15,17 @@
 
 # Install
 
+| Laravel version | Composer command                              |
+| --------------- | --------------------------------------------- |
+| Laravel 9.x     | `composer require overtrue/laravel-lang:~6.0` |
+| Laravel 7.x-8.x | `composer require overtrue/laravel-lang:~5.0` |
+| Laravel 6.x     | `composer require overtrue/laravel-lang:~4.0` |
+| Laravel 5.8     | `composer require overtrue/laravel-lang:~3.0` |
+| Laravel 5.1-5.7 | `composer require overtrue/laravel-lang:~2.0` |
+| Laravel 5       | `composer require overtrue/laravel-lang:~1.0` |
+
 ```shell
-$ composer require "overtrue/laravel-lang:~3.0"
-```
-
-#### Laravel 5.*
-
-After completion of the above, Replace the `config/app.php` content
-
-```php
-Illuminate\Translation\TranslationServiceProvider::class,
-```
-with:
-
-```php
-Overtrue\LaravelLang\TranslationServiceProvider::class,
+$ composer require "overtrue/laravel-lang:~6.0"
 ```
 
 #### Lumen
@@ -44,6 +39,7 @@ $app->register(Overtrue\LaravelLang\TranslationServiceProvider::class);
 # Configuration
 
 ### Laravel
+
 you can change the locale at `config/app.php`:
 
 ```php
@@ -62,7 +58,7 @@ APP_LOCALE=zh_CN
 
 There is no difference with the usual usage.
 
-If you need to add additional language content, Please create a file in the `resources/lang/{LANGUAGE}`  directory.
+If you need to add additional language content, Please create a file in the `resources/lang/{LANGUAGE}` directory.
 
 ### Add custom language items
 
@@ -78,6 +74,7 @@ return [
     'email_has_registed' => '邮箱 :email 已经注册过！',
 ];
 ```
+
 Used in the template:
 
 ```php

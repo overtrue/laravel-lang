@@ -1,6 +1,6 @@
 {
     "name": "overtrue/laravel-lang",
-    "description": "List of 75 languages for Laravel 4, 5, 6 and 7",
+    "description": "List of 75 languages for Laravel.",
     "keywords": [
         "laravel",
         "languages",
@@ -9,7 +9,7 @@
         "overtrue"
     ],
     "require": {
-        "laravel-lang/lang": "^7.0",
+        "laravel-lang/lang": "^9.0",
         "symfony/process": "^5.0.0",
         "ext-json": "*"
     },
