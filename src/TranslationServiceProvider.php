@@ -12,7 +12,7 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
     public function boot()
     {
         $this->publishes([
-                app_path('../vendor') . '/laravel-lang/lang/src' => resource_path('lang/'),
+                app_path('../vendor') . '/laravel-lang/lang/src' => app_path('resources/lang/'),
             ], 'resource');
     }
 
