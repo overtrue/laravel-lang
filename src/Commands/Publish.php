@@ -34,7 +34,7 @@ class Publish extends Command
      */
     public function handle()
     {
-        $locale = \str_replace('-', '_', $this->argument('locales'));
+        $locale = \str_replace('_', '-', $this->argument('locales'));
         $force = $this->option('force') ? 'f' : 'n';
 
         $sourcePath = base_path('vendor/laravel-lang/lang/src');
