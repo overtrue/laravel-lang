@@ -37,8 +37,8 @@ class Publish extends Command
         $locale = \str_replace('-', '_', $this->argument('locales'));
         $force = $this->option('force') ? 'f' : 'n';
 
-        $sourcePath = base_path('vendor/laravel-lang/lang/src');
-        $sourceJsonPath = base_path('vendor/laravel-lang/lang/json');
+        $sourcePath = base_path('vendor/laravel-lang/lang/locales');
+        $sourceJsonPath = base_path('vendor/laravel-lang/lang/locales');
         $targetPath = base_path('resources/lang/');
 
         if (!is_dir($targetPath) && !mkdir($targetPath)) {
@@ -53,7 +53,7 @@ class Publish extends Command
         if ('all' == $locale) {
             $files = [
                 \addslashes($sourcePath).'/*',
-                escapeshellarg($sourceJsonPath),
+                \addslashes($sourceJsonPath).'/*/*.json',
             ];
             $message = 'all';
             $copyEnFiles = true;
@@ -64,8 +64,10 @@ class Publish extends Command
 
                     continue;
                 }
-                $file = $sourcePath.'/'.trim($filename);
-                $jsonFile = $sourceJsonPath.'/'.trim($filename).'.json';
+
+                $trimFilename = trim($filename);
+                $file = $sourcePath.'/'.$trimFilename;
+                $jsonFile = $sourceJsonPath."/{$trimFilename}/{$trimFilename}".'.json';
 
                 if (!file_exists($file)) {
                     $this->error("'$filename' not found.");
