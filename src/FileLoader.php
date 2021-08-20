@@ -5,6 +5,7 @@ namespace Overtrue\LaravelLang;
 use Illuminate\Support\Str;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Translation\FileLoader as LaravelTranslationFileLoader;
+use RuntimeException;
 
 class FileLoader extends LaravelTranslationFileLoader
 {
@@ -12,6 +13,11 @@ class FileLoader extends LaravelTranslationFileLoader
      * @var string
      */
     protected $paths;
+
+    /**
+     * @var string[]
+     */
+    protected $customJsonPaths = [];
 
     /**
      * Create a new file loader instance.
@@ -67,5 +73,47 @@ class FileLoader extends LaravelTranslationFileLoader
         }
 
         return $result;
+    }
+
+    /**
+     * Add a new JSON path to the loader.
+     *
+     * @param  string  $path
+     * @return void
+     */
+    public function addJsonPath($path)
+    {
+        $this->customJsonPaths[] = $path;
+        parent::addJsonPath($path);
+    }
+
+    /**
+     * Load a locale from the given JSON file path.
+     *
+     * @param  string  $locale
+     * @return array
+     *
+     * @throws RuntimeException
+     */
+    protected function loadJsonPaths($locale)
+    {
+        return collect(array_merge($this->jsonPaths, [$this->path]))
+            ->reduce(function ($output, $path) use ($locale) {
+                if (in_array($path, $this->customJsonPaths)) {
+                    $locale = "{$locale}/{$locale}";
+                }
+
+                if ($this->files->exists($full = "{$path}/{$locale}.json")) {
+                    $decoded = json_decode($this->files->get($full), true);
+
+                    if (is_null($decoded) || json_last_error() !== JSON_ERROR_NONE) {
+                        throw new RuntimeException("Translation file [{$full}] contains an invalid JSON structure.");
+                    }
+
+                    $output = array_merge($output, $decoded);
+                }
+
+                return $output;
+            }, []);
     }
 }

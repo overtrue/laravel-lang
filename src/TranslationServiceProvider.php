@@ -46,7 +46,7 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
     {
         $this->app->singleton('translation.loader', function ($app) {
             $paths = [
-                base_path('vendor/laravel-lang/lang/src/'),
+                base_path('vendor/laravel-lang/lang/locales/'),
             ];
 
             if ($this->inLumen) {
@@ -57,7 +57,7 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
             $loader = new FileLoader($app['files'], $app['path.lang'], $paths);
 
             if (\is_callable([$loader, 'addJsonPath'])) {
-                $loader->addJsonPath(base_path('vendor/laravel-lang/lang/json/'));
+                $loader->addJsonPath(base_path('vendor/laravel-lang/lang/locales/'));
             }
 
             return $loader;
