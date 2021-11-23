@@ -118,6 +118,13 @@ $ php artisan lang:publish zh_CN,zh_HK,th,tk
 
 如果你喜欢我的项目并想支持它，[点击这里 :heart:](https://github.com/sponsors/overtrue)
 
+
+## Project supported by JetBrains
+
+Many thanks to Jetbrains for kindly providing a license for me to work on this and other open-source projects.
+
+[![](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)](https://www.jetbrains.com/?from=https://github.com/overtrue)
+
 ## PHP 扩展包开发
 
 > 想知道如何从零开始构建 PHP 扩展包？
