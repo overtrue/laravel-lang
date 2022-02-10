@@ -25,7 +25,7 @@
 | Laravel 5       | `composer require overtrue/laravel-lang:~1.0` |
 
 ```shell
-$ composer require "overtrue/laravel-lang:~6.0"
+composer require "overtrue/laravel-lang:~6.0"
 ```
 
 #### Lumen
@@ -99,16 +99,16 @@ return [
 
 You need only add the partials item what you want.
 
-### publish the language files to your project `resources/lang/` directory:
+### publish the language files to your project `resources/lang/` directory
 
 ```shell
-$ php artisan lang:publish [LOCALES] {--force}
+php artisan lang:publish [LOCALES] {--force}
 ```
 
 examples:
 
 ```shell
-$ php artisan lang:publish zh_CN,zh_HK,th,tk
+php artisan lang:publish zh_CN,zh_HK,th,tk
 ```
 
 ## PHP 扩展包开发
