@@ -30,7 +30,7 @@ class Publish extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
     public function handle()
     {
@@ -39,10 +39,11 @@ class Publish extends Command
 
         $sourcePath = base_path('vendor/laravel-lang/lang/locales');
         $sourceJsonPath = base_path('vendor/laravel-lang/lang/locales');
-        $targetPath = base_path('resources/lang/');
+        $targetPath = base_path('lang');
 
         if (!is_dir($targetPath) && !mkdir($targetPath)) {
-            return $this->error('The lang path "resources/lang/" does not exist or not writable.');
+            $this->error('The lang path "lang" does not exist or not writable.');
+            return;
         }
 
         $files = [];
@@ -100,11 +101,11 @@ class Publish extends Command
         $files = implode(' ', $files);
         $targetPath = escapeshellarg($targetPath);
         $command = "cp -r{$force} {$files} {$targetPath}";
-        $process = \method_exists(Process::class, 'fromShellCommandline') ? Process::fromShellCommandline($command) : new Process($command);
+        $process = \method_exists(Process::class, 'fromShellCommandline') ? Process::fromShellCommandline($command) : new Process([$command]);
 
         $process->run(function ($type, $buffer) {
             if (Process::ERR === $type) {
-                return $this->error(trim($buffer));
+                $this->error(trim($buffer));
             }
         });
 

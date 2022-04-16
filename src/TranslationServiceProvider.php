@@ -51,7 +51,7 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
 
             if ($this->inLumen) {
                 $this->app['path.lang'] = base_path('vendor/laravel/lumen-framework/resources/lang');
-                array_push($paths, base_path('resources/lang/'));
+                $paths[] = base_path('lang');
             }
 
             $loader = new FileLoader($app['files'], $app['path.lang'], $paths);
@@ -77,7 +77,7 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return array_merge(parent::provides(), [PublishCommand::class]);
     }
