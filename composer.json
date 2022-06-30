@@ -9,7 +9,7 @@
     "overtrue"
   ],
   "require": {
-    "laravel-lang/lang": "^10.4",
+    "laravel-lang/lang": "^11.0",
     "symfony/process": "^6.0",
     "ext-json": "*"
   },
