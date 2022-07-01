@@ -39,7 +39,7 @@ class Publish extends Command
 
         $sourcePath = base_path('vendor/laravel-lang/lang/locales');
         $sourceJsonPath = base_path('vendor/laravel-lang/lang/locales');
-        $targetPath = lang_path();
+        $targetPath = base_path('lang');
 
         if (!is_dir($targetPath) && !mkdir($targetPath)) {
             $this->error('The lang path "lang" does not exist or not writable.');
