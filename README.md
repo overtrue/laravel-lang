@@ -9,7 +9,7 @@
 
 > **Warning**
 >
-> In order not to duplicate the wheel, there is already a better solution to use [our official Laravel-Lang publisher](https://publisher.laravel-lang.com/). This library will be discontinued, thank you for your support.
+> There is already a better solution to use [our official Laravel-Lang publisher](https://publisher.laravel-lang.com/). This project will be discontinued, thank you for your support.
 
 # Features
 
