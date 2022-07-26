@@ -7,6 +7,10 @@
 <a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/overtrue/laravel-lang.svg?maxAge=2592000" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/overtrue/laravel-lang"><img alt="License" src="https://img.shields.io/packagist/l/overtrue/laravel-lang.svg?maxAge=2592000" style="max-width:100%;"></a></p>
 
+> **Warning**
+>
+> In order not to duplicate the wheel, there is already a better solution to use [our official Laravel-Lang publisher](https://publisher.laravel-lang.com/). This library will be discontinued, thank you for your support.
+
 # Features
 
 - Laravel 5+ && Lumen support.
